@@ -1,0 +1,23 @@
+# kuar demo's pod with a liveness probe
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+spec:
+  containers:
+  - image: gcr.io/kuar-demo/kuard-amd64:1
+    name: kuard
+    # Liveness probe, check the container is live
+    # use a httpGet probe to make a GET HTTP request on kuard container's /healthy endpoint on port 8080 
+    livenessProbe:
+      httpGet:
+        path: /healthy
+        port: 8080
+      initialDelaySeconds: 5  # wait 5 seconds before running first health check
+      timeoutSeconds: 1       # health check fails after 1 second timeout
+      periodSeconds: 10       # run health check every 10 seconds
+      failureThreshold: 3     # container considered as unhealthy after 3 failed health check, kubernetes will restart it
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP

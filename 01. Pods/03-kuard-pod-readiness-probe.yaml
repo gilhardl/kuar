@@ -1,0 +1,31 @@
+# kuar demo's pod with a readiness probe
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+spec:
+  containers:
+  - image: gcr.io/kuar-demo/kuard-amd64:1
+    name: kuard
+    livenessProbe:
+      httpGet:
+        path: /healthy
+        port: 8080
+      initialDelaySeconds: 5
+      timeoutSeconds: 1
+      periodSeconds: 10
+      failureThreshold: 3
+    # Readiness probe, check the container is available
+    # use a httpGet probe to make a GET HTTP request on kuard container's /ready endpoint on port 8080 
+    readinessProbe:
+      httpGet:
+        path: /ready
+        port: 8080
+      initialDelaySeconds: 30   # wait 30 seconds before running first readiness check
+      timeoutSeconds: 1         # readiness check fails after 1 second timeout
+      periodSeconds: 10         # run readiness check every 10 seconds
+      failureThreshold: 3       # container considered as unhealthy after 3 failed readiness check
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
