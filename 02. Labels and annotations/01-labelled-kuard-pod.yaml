@@ -1,0 +1,16 @@
+# kuar demo's pod with labels
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard
+  labels:
+    app: kuard
+    env: prod
+spec:
+  containers:
+  - image: gcr.io/kuar-demo/kuard-amd64:1
+    name: kuard
+    ports:
+    - containerPort: 8080
+      name: http
+      protocol: TCP
