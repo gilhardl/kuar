@@ -1,0 +1,30 @@
+# kuard demo "Alpaca" deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpaca-prod
+  labels:
+    app: alpaca
+    ver: "1"
+    env: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: alpaca
+      ver: "1"
+      env: prod
+  template:
+    metadata:
+      labels:
+        app: alpaca
+        ver: "1"
+        env: prod
+    spec:
+      containers:
+      - image: gcr.io/kuar-demo/kuard-amd64:1
+        name: kuard
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
