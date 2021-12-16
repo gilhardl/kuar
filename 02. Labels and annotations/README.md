@@ -66,7 +66,7 @@ kubectl get pods --selector="ver"
 
 > Selectors can be used with other commands like `kubectl delete`.
 
-#### Selectors operations
+#### Selectors operators
 
 | Operator                     | Description                            |
 |------------------------------|----------------------------------------|
