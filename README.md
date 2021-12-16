@@ -81,7 +81,10 @@ gcloud container clusters resize <CLUSTER_NAME> --num-node 0
 
 ### Clean up
 
-- Stop and delete cluster's services
+- Delete cluster's services (if some were created)
+  ```
+  kubectl delete services <SERVICE_NAME>
+  ```
 - Delete the cluster
   ```
   gcloud container clusters delete <CLUSTER_NAME>
