@@ -4,6 +4,12 @@
 
 Project to learn Kubernetes using _Kubernetes up and running_ wrote by Kelsey Hightower, Brendan Burns and Joe Beda (O'Reilly).
 
+# Table of content
+
+- [01. Pods](/01.%20Pods/README.md)
+- [02. Labels and annotations](/02.%20Labels%20and%20annotations/README.md)
+- [03. Services discovery](/03.%20Services%20discovery/README.md)
+
 # Getting started
 
 ## Google Cloud Platform (GKE)
