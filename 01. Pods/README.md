@@ -6,6 +6,8 @@
 
 ## Cheatsheet
 
+A **pod** represents a collection of application containers and volumes running in the same environment.
+
 ### Create a pod
 
 Create a pod named `kuard` using the `kuard-amd64` image
