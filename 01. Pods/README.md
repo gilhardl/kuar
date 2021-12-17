@@ -4,7 +4,7 @@
 >
 > Each `.yaml` file is a Kubernetes resource manifest used in this chapter, sorted by their appearance order in the book.
 
-## Cheetsheat
+## Cheatsheet
 
 ### Create a pod
 

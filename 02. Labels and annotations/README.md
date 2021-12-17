@@ -4,7 +4,7 @@
 >
 > Each `.yaml` file is a Kubernetes resource manifest used in this chapter, sorted by their appearance order in the book.
 
-## Cheetsheat
+## Cheatsheet
 
 - **Labels** are used to define identification metadatas on resources, useful to gaher, exploit and display resources.
 - **Annotations** are used store metadatas on resources, useful for tools and library consuming the cluster's API.
