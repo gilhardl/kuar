@@ -6,8 +6,8 @@
 
 ## Cheatsheet
 
-- **Labels** are used to define identification metadatas on resources, useful to gaher, exploit and display resources.
-- **Annotations** are used store metadatas on resources, useful for tools and library consuming the cluster's API.
+- **Labels** are key/value pairs used to define identification metadatas on resources, useful to gaher, exploit and display resources.
+- **Annotations** are key/value pairs used store metadatas on resources, useful for tools and library consuming the cluster's API.
 
 ### Limitations
 
